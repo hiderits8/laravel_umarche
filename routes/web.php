@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComponentTestController;
+use App\Http\Controllers\LifeCycleTestController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
 Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
+Route::get('/servicecontainertest', [LifeCycleTestController::class, 'showServiceConteainerTest']);
+
 
 
 require __DIR__ . '/auth.php';
